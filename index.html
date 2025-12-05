@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Change Text inside Element</title>
+    <style>
+      .chel {
+    background: aliceblue;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+    </style>
+  </head>
+  <body>
+   <div class="chel">
+  <h1 id="hello">Hello Welcome !</h1>
+     <p id="msg"></p>
+     <button id="chbtn">Change</button>
+      <button id="reset">Reset</button>
+   </div>
+   <script>
+   let hello = document.getElementById("hello");
+     let ortxt = hellow.innerText;
+   let msg= document.getElementById("msg");
+    let chbtn = document.getElementById("chbtn");
+     let  reset = document.getElementById("reset");
+
+     function updateCount(){
+     msg.innerText = "count character"+ hello.innerText.length;
+     }
+
+     updateCount();
+
+     chbtn.addEventListener("click", ()=>{
+     hello.innerText = "welcome to india !"  
+     updateCount();                    
+     });
+     reset.addEventListener("click",()=>{
+      hello.innerText = ortxt;
+         updateCount(); 
+     });
+     
+   </script>
+     </body>
+</html>
