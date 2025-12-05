@@ -10,11 +10,18 @@
     border-radius: 5px;
     display: inline-block;
 }
+      .fade{
+        opacity:1;
+        transition: ease;
+      }
+      .fadeout{
+        opacity:0;
+      }
     </style>
   </head>
   <body>
    <div class="chel">
-  <h1 id="hello">Hello Welcome !</h1>
+  <h1 id="hello" class="fadeout">Hello Welcome !</h1>
      <p id="msg">Characters: 0</p>
      <button id="togglebtn">Change</button>
     
@@ -35,6 +42,11 @@
      msg.innerText = "count character"+ hello.innerText.length;
      }
      togglebtn.addEventListener("click",()=>{
+
+       hello.classList.add("fadeout");
+
+       setTimeout(() =>{
+       
        if(!isChange){
       hello.innerText ="welcome to india !";
          togglebtn.innerText ="Reset";   
@@ -46,6 +58,9 @@
          isChange = false;
        }
         updateCount();
+        hello.classList.remove("fadeout");
+       },600);
+                  
      });
      //updateCount();
 
